@@ -3,6 +3,7 @@ package ca.jrvs.apps.grep;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class JavaGrepImp implements JavaGrep{
+public class JavaGrepImp implements JavaGrep {
 
     @Override
     public void process() throws IOException {
@@ -24,19 +25,12 @@ public class JavaGrepImp implements JavaGrep{
 
     //use lambda/Steam API's
     @Override
-    public List<File> listFiles(String rootDir) {
-        List<File> fileList = new ArrayList<>();
-        try {
-            Files.walk(Paths.get(getRootPath()))
-                    .filter(Files :: isRegularFile)
-                    //.collect(Collectors.toList())
-                    //add to List
-                    .forEach(System.out :: println); //DEBUGGING
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return fileList;
+    public List<File> listFiles(String rootDir) throws IOException{
+//        List<File> fileList = new ArrayList<>();
+            return Files.walk(Paths.get(rootDir))
+                    .filter(Files::isRegularFile)
+                    .map(Path::toFile)
+                    .collect(Collectors.toList());
     }
 
     //use lambda/Steam API's or BufferedReader and FileReader
@@ -55,8 +49,8 @@ public class JavaGrepImp implements JavaGrep{
 
         // Cycles through positive matches in line and prints to screen
         // Checks string isnt empty and trims any whitespace
-        while (regexMatcher.find()){
-            if (regexMatcher.group().length() != 0){
+        while (regexMatcher.find()) {
+            if (regexMatcher.group().length() != 0) {
                 flag = true;
                 System.out.println(regexMatcher.group().trim());
             }
