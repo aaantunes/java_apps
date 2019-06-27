@@ -24,18 +24,17 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public void process() throws IOException {
-        //call listFiles() and store as list<File>
-        List<File> files = listFiles(getRootPath());
-        for (File f : files) {
-            readLines(f);
+        List<String> matchedLines = new ArrayList<>();
+        for (File file : listFiles(this.getRootPath())){
+            for (String line : readLines(file)){
+                if (containsPattern(line)){
+                    matchedLines.add(line);
+                }
+            }
         }
-
-        //pass fileList to readLines()
-        //call contains pattern for every
-
+        writeToFile(matchedLines);
     }
 
-    //use lambda/Steam API's
     @Override
     public List<File> listFiles(String rootDir) throws IOException{
             return Files.walk(Paths.get(rootDir))
@@ -44,7 +43,6 @@ public class JavaGrepImp implements JavaGrep {
                     .collect(Collectors.toList());
     }
 
-    //use lambda/Steam API's or BufferedReader and FileReader
     @Override
     public List<String> readLines(File inputFile) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader(inputFile));
@@ -53,25 +51,12 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public boolean containsPattern(String line) {
-        boolean flag = false;
-
-        Pattern checkRegex = Pattern.compile(getRegex());
-        Matcher regexMatcher = checkRegex.matcher(line);
-
-        // Cycles through positive matches in line and prints to screen
-        // Checks string isnt empty and trims any whitespace
-        while (regexMatcher.find()) {
-            if (regexMatcher.group().length() != 0) {
-                flag = true;
-                System.out.println(regexMatcher.group().trim());
-            }
-        }
-        return flag;
+        return line.matches(this.getRegex());
     }
 
     @Override
     public void writeToFile(List<String> lines) throws IOException {
-
+        Files.write(Paths.get(this.getOutFile()),lines);
     }
 
     @Override
