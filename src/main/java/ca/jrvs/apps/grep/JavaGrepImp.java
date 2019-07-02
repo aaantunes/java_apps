@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JavaGrepImp implements JavaGrep {
     private String regex;
@@ -23,9 +24,9 @@ public class JavaGrepImp implements JavaGrep {
     @Override
     public void process() throws IOException {
         List<String> matchedLines = new ArrayList<>();
-        for (File file : listFiles(this.getRootPath())){
-            for (String line : readLines(file)){
-                if (containsPattern(line)){
+        for (File file : listFiles(this.getRootPath())) {
+            for (String line : readLines(file)) {
+                if (containsPattern(line)) {
                     matchedLines.add(line);
                 }
             }
@@ -33,18 +34,16 @@ public class JavaGrepImp implements JavaGrep {
         writeToFile(matchedLines);
     }
 
-    //use lambda/Steam API's
     @Override
-    public List<File> listFiles(String rootDir) throws IOException{
+    public List<File> listFiles(String rootDir) throws IOException {
         return Files.walk(Paths.get(rootDir))
                 .filter(Files::isRegularFile)
                 .map(Path::toFile)
                 .collect(Collectors.toList());
     }
 
-    //use lambda/Steam API's or BufferedReader and FileReader
     @Override
-    public List<String> readLines(File inputFile) throws IOException{
+    public List<String> readLines(File inputFile) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(inputFile));
         return br.lines().collect(Collectors.toList());
     }
@@ -56,7 +55,7 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public void writeToFile(List<String> lines) throws IOException {
-        Files.write(Paths.get(this.getOutFile()),lines);
+        Files.write(Paths.get(this.getOutFile()), lines);
     }
 
     @Override
@@ -88,6 +87,7 @@ public class JavaGrepImp implements JavaGrep {
     public void setOutFile(String outFile) {
         this.outFile = outFile;
     }
+
 
     public static void main(String[] args) {
         if (args.length != 3) {
