@@ -1,9 +1,7 @@
 package ca.jrvs.apps.jdbc;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class JDBCExecutor {
 
@@ -11,14 +9,21 @@ public class JDBCExecutor {
         DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost",
                 "jdbc_db", "postgres", "password");
 
-        try{
+        try {
             Connection connection = dcm.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) FROM CUSTOMER");
-            while (resultSet.next()){
-                System.out.println(resultSet.getInt(1));
-            }
-        } catch (SQLException e){
+            CustomerDAO customerDAO = new CustomerDAO(connection);
+            Customer customer = new Customer();
+            customer.setFirstName("Andre");
+            customer.setLastName("Antunes");
+            customer.setEmail("aaantune@ryerson.ca");
+            customer.setPhone("(416) 888-7268");
+            customer.setAddress("2349 Rideau Dr.");
+            customer.setCity("Oakville");
+            customer.setState("ON");
+            customer.setZipcode("L6H7R6");
+
+            customerDAO.create(customer);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
