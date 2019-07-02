@@ -59,12 +59,3 @@ public interface JavaGrep {
 
     void setOutFile(String outFile);
 }
-
-/* To Do:
-*   1. Write a regex to match all files with .csv file extension
-*   2. "" .. with jpg or jpeg ""
-*   3. '' .. to match the IP addr range from 0.0.0.0 to 999.999.999.999
-*       note: leading 0 is allowed (001 == 1
-*   4. "" to match an empty line
-*
-* */
