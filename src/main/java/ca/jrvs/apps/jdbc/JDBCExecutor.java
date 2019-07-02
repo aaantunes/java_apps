@@ -12,17 +12,9 @@ public class JDBCExecutor {
         try {
             Connection connection = dcm.getConnection();
             CustomerDAO customerDAO = new CustomerDAO(connection);
-            Customer customer = new Customer();
-            customer.setFirstName("Andre");
-            customer.setLastName("Antunes");
-            customer.setEmail("aaantune@ryerson.ca");
-            customer.setPhone("(416) 888-7268");
-            customer.setAddress("2349 Rideau Dr.");
-            customer.setCity("Oakville");
-            customer.setState("ON");
-            customer.setZipcode("L6H7R6");
+            Customer customer = customerDAO.findById(1000);
+            System.out.println(customer.getFirstName() + " " + customer.getLastName());
 
-            customerDAO.create(customer);
         } catch (SQLException e) {
             e.printStackTrace();
         }
