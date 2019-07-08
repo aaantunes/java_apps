@@ -22,7 +22,7 @@ public class Tweet {
     @JsonProperty("created_at")
     private String createdAt;
     @JsonProperty("id")
-    private Integer id;
+    private long id;
     @JsonProperty("id_str")
     private String idStr;
     @JsonProperty("text")
@@ -30,11 +30,11 @@ public class Tweet {
     @JsonProperty("entities")
     private Entities entities;
     @JsonProperty("coordinates")
-    private Object coordinates;
+    private Coordinates coordinates;
     @JsonProperty("retweet_count")
-    private Integer retweetCount;
+    private long retweetCount;
     @JsonProperty("favorite_count")
-    private Integer favoriteCount;
+    private long favoriteCount;
     @JsonProperty("favorited")
     private Boolean favorited;
     @JsonProperty("retweeted")
@@ -51,7 +51,7 @@ public class Tweet {
     }
 
     @JsonProperty("id")
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
@@ -91,17 +91,16 @@ public class Tweet {
     }
 
     @JsonProperty("coordinates")
-    public Object getCoordinates() {
+    public Coordinates getCoordinates() {
         return coordinates;
     }
 
-    @JsonProperty("coordinates")
-    public void setCoordinates(Object coordinates) {
+    public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
     @JsonProperty("retweet_count")
-    public Integer getRetweetCount() {
+    public long getRetweetCount() {
         return retweetCount;
     }
 
@@ -111,7 +110,7 @@ public class Tweet {
     }
 
     @JsonProperty("favorite_count")
-    public Integer getFavoriteCount() {
+    public long getFavoriteCount() {
         return favoriteCount;
     }
 
