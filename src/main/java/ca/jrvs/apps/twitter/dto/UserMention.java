@@ -19,11 +19,11 @@ public class UserMention {
     @JsonProperty("name")
     private String name;
     @JsonProperty("indices")
-    private List<Integer> indices = null;
+    private List<Long> indices = null;
     @JsonProperty("screen_name")
     private String screenName;
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
     @JsonProperty("id_str")
     private String idStr;
 
@@ -38,12 +38,12 @@ public class UserMention {
     }
 
     @JsonProperty("indices")
-    public List<Integer> getIndices() {
+    public List<Long> getIndices() {
         return indices;
     }
 
     @JsonProperty("indices")
-    public void setIndices(List<Integer> indices) {
+    public void setIndices(List<Long> indices) {
         this.indices = indices;
     }
 
@@ -58,12 +58,12 @@ public class UserMention {
     }
 
     @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

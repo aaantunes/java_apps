@@ -22,7 +22,7 @@ public class Tweet {
     @JsonProperty("created_at")
     private String createdAt;
     @JsonProperty("id")
-    private long id;
+    private Long id;
     @JsonProperty("id_str")
     private String idStr;
     @JsonProperty("text")
@@ -32,9 +32,9 @@ public class Tweet {
     @JsonProperty("coordinates")
     private Coordinates coordinates;
     @JsonProperty("retweet_count")
-    private long retweetCount;
+    private Long retweetCount;
     @JsonProperty("favorite_count")
-    private long favoriteCount;
+    private Long favoriteCount;
     @JsonProperty("favorited")
     private Boolean favorited;
     @JsonProperty("retweeted")
@@ -51,12 +51,12 @@ public class Tweet {
     }
 
     @JsonProperty("id")
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -100,22 +100,22 @@ public class Tweet {
     }
 
     @JsonProperty("retweet_count")
-    public long getRetweetCount() {
+    public Long getRetweetCount() {
         return retweetCount;
     }
 
     @JsonProperty("retweet_count")
-    public void setRetweetCount(Integer retweetCount) {
+    public void setRetweetCount(Long retweetCount) {
         this.retweetCount = retweetCount;
     }
 
     @JsonProperty("favorite_count")
-    public long getFavoriteCount() {
+    public Long getFavoriteCount() {
         return favoriteCount;
     }
 
     @JsonProperty("favorite_count")
-    public void setFavoriteCount(Integer favoriteCount) {
+    public void setFavoriteCount(Long favoriteCount) {
         this.favoriteCount = favoriteCount;
     }
 
@@ -153,5 +153,22 @@ public class Tweet {
                 ", favorited=" + favorited +
                 ", retweeted=" + retweeted +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tweet)) return false;
+        Tweet tweet = (Tweet) o;
+        return getId() == tweet.getId() &&
+                getRetweetCount() == tweet.getRetweetCount() &&
+                getFavoriteCount() == tweet.getFavoriteCount() &&
+                getCreatedAt().equals(tweet.getCreatedAt()) &&
+                getIdStr().equals(tweet.getIdStr()) &&
+                getText().equals(tweet.getText()) &&
+                getEntities().equals(tweet.getEntities()) &&
+                getCoordinates().equals(tweet.getCoordinates()) &&
+                getFavorited().equals(tweet.getFavorited()) &&
+                getRetweeted().equals(tweet.getRetweeted());
     }
 }

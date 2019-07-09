@@ -16,7 +16,7 @@ public class Hashtag {
     @JsonProperty("text")
     private String text;
     @JsonProperty("indices")
-    private List<Integer> indices = null;
+    private List<Long> indices = null;
 
     @JsonProperty("text")
     public String getText() {
@@ -29,12 +29,12 @@ public class Hashtag {
     }
 
     @JsonProperty("indices")
-    public List<Integer> getIndices() {
+    public List<Long> getIndices() {
         return indices;
     }
 
     @JsonProperty("indices")
-    public void setIndices(List<Integer> indices) {
+    public void setIndices(List<Long> indices) {
         this.indices = indices;
     }
 

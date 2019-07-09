@@ -14,27 +14,27 @@ import java.util.List;
 public class Entities {
 
     @JsonProperty("hashtags")
-    private List<Object> hashtags = null;
+    private List<Hashtag> hashtags = null;
     @JsonProperty("user_mentions")
-    private List<Object> userMentions = null;
+    private List<UserMention> userMentions = null;
 
     @JsonProperty("hashtags")
-    public List<Object> getHashtags() {
+    public List<Hashtag> getHashtags() {
         return hashtags;
     }
 
     @JsonProperty("hashtags")
-    public void setHashtags(List<Object> hashtags) {
+    public void setHashtags(List<Hashtag> hashtags) {
         this.hashtags = hashtags;
     }
 
     @JsonProperty("user_mentions")
-    public List<Object> getUserMentions() {
+    public List<UserMention> getUserMentions() {
         return userMentions;
     }
 
     @JsonProperty("user_mentions")
-    public void setUserMentions(List<Object> userMentions) {
+    public void setUserMentions(List<UserMention> userMentions) {
         this.userMentions = userMentions;
     }
 
