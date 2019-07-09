@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.net.URI;
 
 public class ApacheHttpHelper implements HttpHelper {
-    private static String CONSUMER_KEY = "YnBeahbk7JIAGik0O6hGVe8gY";
-    private static String CONSUMER_SECRET = "a1XzeGBYwDl9XuefZGcu11dFskKDJujjFB7frhHTn9yuT3VtKb";
-    private static String ACCESS_TOKEN = "1144303513759096832-sjTCyYPAt05Xh0K990WUILFvolqowK";
-    private static String TOKEN_SECRET = "V1cBQzj5dEnsjfNzSm8dSBtrg4ayoHaBvIlOv6Ge1AM4i";
+    private static String CONSUMER_KEY = System.getenv("consumerKey");
+    private static String CONSUMER_SECRET = System.getenv("consumerSecret");
+    private static String ACCESS_TOKEN = System.getenv("accessToken");
+    private static String TOKEN_SECRET = System.getenv("tokenSecret");
 
     @Override
     public HttpResponse httpPost(URI uri) throws OAuthException, IOException {
