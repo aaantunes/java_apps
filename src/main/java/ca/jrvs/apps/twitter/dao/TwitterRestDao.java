@@ -114,6 +114,11 @@ public class TwitterRestDao implements CrdRepository<Tweet, String> {
         //Check response status
         int status = response.getStatusLine().getStatusCode();
         if (status != expectedStatusCode) {
+            try {
+                System.out.println(EntityUtils.toString(response.getEntity()));
+            } catch (IOException e) {
+                System.out.println("Response has no entity");
+            }
             throw new RuntimeException("Unexpected HTTP Status: " + status);
         }
 
@@ -134,7 +139,7 @@ public class TwitterRestDao implements CrdRepository<Tweet, String> {
             tweet = JsonUtil.toObjectFromJson(jsonStr, Tweet.class);
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("Unable to convert JSON string to tweet bject" + e);
+            throw new RuntimeException("Unable to convert JSON string to tweet object" + e);
         }
         return tweet;
     }
