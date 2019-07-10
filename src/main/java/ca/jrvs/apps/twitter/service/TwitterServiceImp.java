@@ -1,16 +1,19 @@
 package ca.jrvs.apps.twitter.service;
 
 import ca.jrvs.apps.twitter.Util.JsonUtil;
-import ca.jrvs.apps.twitter.dao.CrdRepository;
+import ca.jrvs.apps.twitter.dao.CrdDao;
 import ca.jrvs.apps.twitter.dto.Coordinates;
 import ca.jrvs.apps.twitter.dto.Tweet;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import oauth.signpost.exception.OAuthException;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Arrays;
 
+@Service
 public class TwitterServiceImp implements TwitterService {
 
     private static final int MAX_TWEET_LENGTH = 280;
@@ -20,9 +23,10 @@ public class TwitterServiceImp implements TwitterService {
     private static final double MAX_LONGITUDE = 180;
     private static final String COORDINATE_TYPE = "Point";
 
-    private CrdRepository dao;
+    private CrdDao dao;
 
-    public TwitterServiceImp(CrdRepository dao) {
+    @Autowired
+    public TwitterServiceImp(CrdDao dao) {
         this.dao = dao;
     }
 

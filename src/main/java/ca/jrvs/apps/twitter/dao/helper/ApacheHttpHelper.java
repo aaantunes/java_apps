@@ -8,11 +8,14 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URI;
 
+@Component
 public class ApacheHttpHelper implements HttpHelper {
+
     private static String CONSUMER_KEY = System.getenv("consumerKey");
     private static String CONSUMER_SECRET = System.getenv("consumerSecret");
     private static String ACCESS_TOKEN = System.getenv("accessToken");

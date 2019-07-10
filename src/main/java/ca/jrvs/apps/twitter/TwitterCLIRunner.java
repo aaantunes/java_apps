@@ -2,13 +2,17 @@ package ca.jrvs.apps.twitter;
 
 import ca.jrvs.apps.twitter.service.TwitterService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TwitterCLIRunner {
 
     private static final String COLON = ":";
     private static final String COMMA = ",";
     private static TwitterService service;
 
+    @Autowired
     public TwitterCLIRunner(TwitterService service) {
         this.service = service;
     }
