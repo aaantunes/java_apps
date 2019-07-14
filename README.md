@@ -67,7 +67,7 @@ This application uses JDBC API to access and manage a PostgreSQL RDBMS database.
 
 
 
-## Usage <a name="Usage"></a>
+## Usage
 
 This application does not take in any command line arguments however the `DatabaseConnectionManager` requires several parameters specific to each user. This includes the `hostName`, `databaseName`, `PSQLUsername`, and `PSQLPassword`.
 
@@ -80,7 +80,7 @@ DatabaseConnectionManager dcm =
 
 ## Design and Implementation
 
-The application runs from the `JDBCExecutor` by initially creating a PostgreSQL `Connection` dependent on the user specific `DatabaseConnectionManager` as seen in the [Usage](#Usage) section. The user can then create a `CustomerDAO` or `OrderDAO` to pass CRUD operations to the PostgreSQL database through the JDBC Driver Manager.
+The application runs from the `JDBCExecutor` by initially creating a PostgreSQL `Connection` dependent on the user specific `DatabaseConnectionManager` as seen in the **usage** section. The user can then create a `CustomerDAO` or `OrderDAO` to pass CRUD operations to the PostgreSQL database through the JDBC Driver Manager.
 
 The CRUD operations are implemented by calling the following DAO methods :
 
