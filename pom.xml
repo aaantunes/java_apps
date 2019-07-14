@@ -44,7 +44,7 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.7</version>
         </dependency>
-        <!--Testing with Mochito/JUnit/Spring-->
+        <!--Testing with Mockito/JUnit/Spring-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
