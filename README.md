@@ -1,18 +1,32 @@
 # Table of Contents
 
-[Twitter CLI App](#twitter CLI App)
+- [Twitter CLI App<a name="Twitter CLI App"></a>](#twitter-cli-app-a-name--twitter-cli-app----a-)
+  - [Introduction<a name="TwitterIntro"></a>](#introduction-a-name--twitterintro----a-)
+  - [Usage <a name="TwitterUsage"></a>](#usage--a-name--twitterusage----a-)
+  - [Design and Implementation](#design-and-implementation)
+    - [Twitter CLI App Work Flow](#twitter-cli-app-work-flow)
+    - [Libraries](#libraries)
+  - [Enhancements and Issues](#enhancements-and-issues)
+- [Java JDBC App](#java-jdbc-app)
+  - [Introduction](#introduction)
+  - [Usage](#usage)
+  - [Design and Implementation](#design-and-implementation-1)
+    - [Libraries](#libraries-1)
+    - [High Level Work Flow](#high-level-work-flow)
+    - [Database Entity Relationship Diagram](#database-entity-relationship-diagram)
+  - [Enhancements and Issues](#enhancements-and-issues-1)
+- [Java Grep App](#java-grep-app)
+  - [Introduction](#introduction-1)
+  - [Usage](#usage-1)
+  - [Design and Implementation](#design-and-implementation-2)
+    - [Libraries](#libraries-2)
+  - [Enhancements and Issues](#enhancements-and-issues-2)
 
-​	[Introduction](#https://github.com/aaantunes/java_apps#introduction-)
-
-​	[Usage](#TwitterUsage)
 
 
+# Twitter CLI App<a name="Twitter CLI App"></a>
 
-
-
-# Twitter CLI App <a name="Twitter CLI App"></a>
-
-## Introduction <a name="TwitterIntro"></a>
+## Introduction<a name="TwitterIntro"></a>
 
 This application uses the Twitter API to create, read and delete tweets on Twitter. This application uses Spring Boot to launch the application and uses HTTP requests to communicate with Twitter by sending and receiving JSON Strings.
 
@@ -133,13 +147,13 @@ PostgreSQL - JDBC Driver Manager to connect to database
 
 ### High Level Work Flow
 
-<img src="C:\Users\aaant\Downloads\JDBCWorkFlow.png" >
+<img src="JDBCWorkFlow.png" >
 
 
 
 ### Database Entity Relationship Diagram
 
-<img src="C:\Users\aaant\Downloads\Blank Diagram (1).png" width="500" >
+<img src="JDBC_ER.png" width="500" >
 
 ## Enhancements and Issues
 
