@@ -69,7 +69,7 @@ The application is run from the interface layer and the flow of control passes d
 
 ### Twitter CLI App Work Flow
 
-<img src="TwitterWorkFlow.png" >
+<img src="Images/TwitterWorkFlow.png" >
 
 ### Libraries
 
@@ -146,13 +146,13 @@ PostgreSQL - JDBC Driver Manager to connect to database
 
 ### High Level Work Flow
 
-<img src="JDBCWorkFlow.png" >
+<img src="Images/JDBCWorkFlow.png" >
 
 
 
 ### Database Entity Relationship Diagram
 
-<img src="JDBC_ER.png" width="500" >
+<img src="Images/JDBC_ER.png" width="500" >
 
 ## Enhancements and Issues
 
