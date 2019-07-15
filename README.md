@@ -56,7 +56,7 @@ The application is run from the interface layer and the flow of control passes d
 
 ### Twitter CLI App Work Flow
 
-<img src="C:\Users\aaant\Downloads\TwitterWorkFlow.png" >
+<img src="TwitterWorkFlow.png" >
 
 ### Libraries
 
