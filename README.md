@@ -1,14 +1,35 @@
 # Table of Contents
 
-[TOC]
+- [Twitter CLI App](#twitter-cli-app)
+  * [Introduction](#introduction)
+  * [Usage](#usage)
+  * [Design and Implementation](#design-and-implementation)
+    + [Twitter CLI App Work Flow](#twitter-cli-app-work-flow)
+    + [Libraries](#libraries)
+  * [Enhancements and Issues](#enhancements-and-issues)
+- [Java JDBC App](#java-jdbc-app)
+  * [Introduction](#introduction-1)
+  * [Usage](#usage-1)
+  * [Design and Implementation](#design-and-implementation-1)
+    + [Libraries](#libraries-1)
+    + [High Level Work Flow](#high-level-work-flow)
+    + [Database Entity Relationship Diagram](#database-entity-relationship-diagram)
+  * [Enhancements and Issues](#enhancements-and-issues-1)
+- [Java Grep App](#java-grep-app)
+  * [Introduction](#introduction-2)
+  * [Usage](#usage-2)
+  * [Design and Implementation](#design-and-implementation-2)
+    + [Libraries](#libraries-2)
+  * [Enhancements and Issues](#enhancements-and-issues-2)
 
-# Twitter CLI App
 
-## Introduction
+# Twitter CLI App<a name="Twitter CLI App"></a>
+
+## Introduction<a name="TwitterIntro"></a>
 
 This application uses the Twitter API to create, read and delete tweets on Twitter. This application uses Spring Boot to launch the application and uses HTTP requests to communicate with Twitter by sending and receiving JSON Strings.
 
-## Usage
+## Usage <a name="TwitterUsage"></a>
 
 This application takes in several arguments dependent on which function the user wishes to call. The first argument passed is either `post`, `show`, or `delete` followed by their respective dependency arguments.
 
@@ -48,7 +69,7 @@ The application is run from the interface layer and the flow of control passes d
 
 ### Twitter CLI App Work Flow
 
-<img src="C:\Users\aaant\Downloads\TwitterWorkFlow.png" >
+<img src="Images/TwitterWorkFlow.png" >
 
 ### Libraries
 
@@ -125,13 +146,13 @@ PostgreSQL - JDBC Driver Manager to connect to database
 
 ### High Level Work Flow
 
-<img src="C:\Users\aaant\Downloads\JDBCWorkFlow.png" >
+<img src="Images/JDBCWorkFlow.png" >
 
 
 
 ### Database Entity Relationship Diagram
 
-<img src="C:\Users\aaant\Downloads\Blank Diagram (1).png" width="500" >
+<img src="Images/JDBC_ER.png" width="500" >
 
 ## Enhancements and Issues
 
