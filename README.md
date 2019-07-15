@@ -2,7 +2,7 @@
 
 [Twitter CLI App](#twitter CLI App)
 
-​	[Introduction](#TwitterIntro)
+​	[Introduction](#https://github.com/aaantunes/java_apps#introduction-)
 
 ​	[Usage](#TwitterUsage)
 
